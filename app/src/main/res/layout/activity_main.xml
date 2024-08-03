@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".MainActivity">
+
+
+    <nl.joery.animatedbottombar.AnimatedBottomBar
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:abb_indicatorAppearance="round"
+        app:abb_indicatorColor="#4D599E"
+        app:abb_indicatorHeight="4dp"
+        app:abb_indicatorMargin="16dp"
+        app:abb_selectedIndex="0"
+        app:abb_selectedTabType="text"
+        app:abb_tabColor="#969697"
+        app:abb_tabColorSelected="#969697"
+        app:abb_tabs="@menu/tabs"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Chronometer
+        android:id="@+id/stopwatch_chronometre"
+        android:layout_width="168dp"
+        android:layout_height="57dp"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="00:00.00"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageview2"
+        app:layout_constraintEnd_toEndOf="@+id/imageview2"
+        app:layout_constraintStart_toStartOf="@+id/imageview2"
+        app:layout_constraintTop_toTopOf="@+id/imageview2" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="238dp"
+        android:layout_height="72dp"
+        android:padding="10dp"
+        android:text="@string/Stopwatch"
+        android:textColor="#CFCFD3"
+        android:textSize="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageview2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.125" />
+
+    <ImageView
+        android:id="@+id/imageview2"
+        android:layout_width="230dp"
+        android:layout_height="230dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="90dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.418"
+        app:srcCompat="@drawable/round_shape" />
+
+    <ImageView
+        android:id="@+id/stopwatch_play"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageview2"
+        app:layout_constraintVertical_bias="0.765"
+        app:srcCompat="@drawable/playbutton" />
+
+    <ImageView
+        android:id="@+id/stopwatch_reset"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="27dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_bar"
+        app:layout_constraintEnd_toStartOf="@+id/stopwatch_play"
+        app:layout_constraintHorizontal_bias="0.701"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageview2"
+        app:layout_constraintVertical_bias="0.838"
+        app:srcCompat="@drawable/circular" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
