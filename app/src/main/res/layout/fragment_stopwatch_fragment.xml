@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Stopwatch_fragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="238dp"
+            android:layout_height="72dp"
+            android:text="@string/Stopwatch"
+            android:textColor="#CFCFD3"
+            android:textSize="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Chronometer
+            android:id="@+id/stopwatch_chronometre"
+            android:layout_width="168dp"
+            android:layout_height="57dp"
+            android:gravity="center"
+            android:text="00:00.00"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageview2"
+            app:layout_constraintEnd_toEndOf="@+id/imageview2"
+            app:layout_constraintStart_toStartOf="@+id/imageview2"
+            app:layout_constraintTop_toTopOf="@+id/imageview2" />
+
+        <ImageView
+            android:id="@+id/imageview2"
+            android:layout_width="230dp"
+            android:layout_height="230dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/round_shape" />
+
+        <ImageView
+            android:id="@+id/stopwatch_play"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.507"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageview2"
+            app:layout_constraintVertical_bias="0.915"
+            app:srcCompat="@drawable/playbutton" />
+
+        <ImageView
+            android:id="@+id/stopwatch_reset"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            app:layout_constraintBottom_toBottomOf="@+id/stopwatch_play"
+            app:layout_constraintEnd_toStartOf="@+id/stopwatch_play"
+            app:layout_constraintHorizontal_bias="0.629"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/stopwatch_play"
+            app:layout_constraintVertical_bias="0.657"
+            app:srcCompat="@drawable/circular" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>
