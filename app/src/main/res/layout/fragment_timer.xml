@@ -14,7 +14,6 @@
             android:id="@+id/frame2"
             android:layout_width="412dp"
             android:layout_height="656dp"
-            android:layout_marginBottom="3dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

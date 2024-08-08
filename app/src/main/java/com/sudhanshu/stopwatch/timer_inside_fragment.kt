@@ -14,7 +14,7 @@ class timer_inside_fragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    private lateinit var selectedtextview : TextView
+    private lateinit var selectedtextview: TextView //check for which one is selected hour,minute or second
     private lateinit var binding: FragmentTimerInsideFragmentBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,87 +26,100 @@ class timer_inside_fragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-       binding = FragmentTimerInsideFragmentBinding.inflate(inflater,container,false)
+        binding = FragmentTimerInsideFragmentBinding.inflate(inflater, container, false)
 
-         selectedtextview = binding.second
+        selectedtextview = binding.second
 
-         changetextcolor(selectedtextview)
+        changetextcolor(selectedtextview)
 
 
-        binding.second.setOnClickListener{
+        binding.second.setOnClickListener {
             selectedtextview = binding.second
             updateNumpadState()
             changetextcolor(selectedtextview)
 
         }
 
-        binding.hour.setOnClickListener{
+        binding.hour.setOnClickListener {
             selectedtextview = binding.hour
             updateNumpadState()
             changetextcolor(selectedtextview)
 
         }
-        binding.minute.setOnClickListener{
+        binding.minute.setOnClickListener {
             selectedtextview = binding.minute
             updateNumpadState()
             changetextcolor(selectedtextview)
 
         }
-        binding.clear.setOnClickListener{
+        binding.clear.setOnClickListener {
             clearValues()
         }
+        binding.imageView.setOnClickListener {
 
-        binding.numpad1.setOnClickListener{
+            val fragment = LoadingTimerFragment()
+            val fragmentmaanager = requireActivity().supportFragmentManager
+            val transaction = fragmentmaanager.beginTransaction()
+            transaction.replace(R.id.frame2,fragment)
+            transaction.commit()
+
+
+        }
+
+        binding.numpad1.setOnClickListener {
             enternumber("1")
         }
-        binding.numpad2.setOnClickListener{
+        binding.numpad2.setOnClickListener {
             enternumber("2")
         }
-        binding.numpad3.setOnClickListener{
+        binding.numpad3.setOnClickListener {
             enternumber("3")
         }
-        binding.numpad4.setOnClickListener{
+        binding.numpad4.setOnClickListener {
             enternumber("4")
         }
-        binding.numpad5.setOnClickListener{
+        binding.numpad5.setOnClickListener {
             enternumber("5")
         }
-        binding.numpad6.setOnClickListener{
+        binding.numpad6.setOnClickListener {
             enternumber("6")
         }
-        binding.numpad7.setOnClickListener{
+        binding.numpad7.setOnClickListener {
             enternumber("7")
         }
-        binding.numpad8.setOnClickListener{
+        binding.numpad8.setOnClickListener {
             enternumber("8")
         }
-        binding.numpad9.setOnClickListener{
+        binding.numpad9.setOnClickListener {
             enternumber("9")
         }
-        binding.numpad0.setOnClickListener{
+        binding.numpad0.setOnClickListener {
             enternumber("0")
         }
 
 
         return binding.root
     }
-    fun changetextcolor(view:TextView)
-    {
+
+    fun changetextcolor(view: TextView) {
         binding.hour.setTextColor(ContextCompat.getColor(requireContext(), android.R.color.white))
         binding.minute.setTextColor(ContextCompat.getColor(requireContext(), android.R.color.white))
         binding.second.setTextColor(ContextCompat.getColor(requireContext(), android.R.color.white))
-        val color = ContextCompat.getColor(requireContext(),R.color.my_color)
+        val color = ContextCompat.getColor(requireContext(), R.color.my_color)
         view.setTextColor(color)
 
     }
-    fun enternumber(number:String) {
+
+    fun enternumber(number: String) {
         val currentText = selectedtextview.text.toString()
         val newText = (currentText + number).takeLast(2) // Keep only the last 2 digits
         selectedtextview.text = newText
         handleOverflow()
         updateNumpadState()
+        checkForPlayButton()
 
     }
+
     private fun handleOverflow() {
         var secondsText = binding.second.text.toString().toIntOrNull() ?: 0
         var minutesText = binding.minute.text.toString().toIntOrNull() ?: 0
@@ -131,6 +144,7 @@ class timer_inside_fragment : Fragment() {
         binding.minute.text = String.format("%02d", minutesText)
         binding.hour.text = String.format("%02d", hoursText)
     }
+
     private fun clearValues() {
         // Ensure selectedTextView is not null
         selectedtextview?.let { view ->
@@ -151,11 +165,14 @@ class timer_inside_fragment : Fragment() {
 
             // Update the numpad state
             updateNumpadState()
+            checkForPlayButton()
         }
     }
+
     private fun updateNumpadState() {
         val text = selectedtextview.text.toString()
-        val tenthsPlace = text.take(1).toIntOrNull()  //if text is "12", then text.take(1) will give "1".
+        val tenthsPlace =
+            text.take(1).toIntOrNull()  //if text is "12", then text.take(1) will give "1".
 
         // Disable the numpad buttons if the tenths place is not zero
 
@@ -170,8 +187,7 @@ class timer_inside_fragment : Fragment() {
             binding.numpad7.isEnabled = false
             binding.numpad8.isEnabled = false
             binding.numpad9.isEnabled = false
-        }
-        else{
+        } else {
             binding.numpad0.isEnabled = true
             binding.numpad1.isEnabled = true
             binding.numpad2.isEnabled = true
@@ -185,6 +201,21 @@ class timer_inside_fragment : Fragment() {
 
         }
     }
+
+    fun checkForPlayButton() {
+        // Convert the text from each TextView to an integer, or default to 0 if it's empty or not a number
+        val hourValue = binding.hour.text.toString().toIntOrNull() ?: 0
+        val minuteValue = binding.minute.text.toString().toIntOrNull() ?: 0
+        val secondValue = binding.second.text.toString().toIntOrNull() ?: 0
+
+        // Check if any of the fields contain a non-zero value
+        if (hourValue != 0 || minuteValue != 0 || secondValue != 0) {
+            binding.imageView.visibility = View.VISIBLE
+        } else {
+            binding.imageView.visibility = View.INVISIBLE
+        }
+    }
+
 
 
     companion object {
