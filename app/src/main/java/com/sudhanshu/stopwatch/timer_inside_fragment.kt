@@ -56,11 +56,17 @@ class timer_inside_fragment : Fragment() {
             clearValues()
         }
         binding.imageView.setOnClickListener {
+            val bundle = Bundle()// passing data to next fragment ,, (use viewmodel to pass data )
+            bundle.putString("second",binding.second.text.toString())
+            bundle.putString("minute",binding.minute.text.toString())
+            bundle.putString("hour",binding.hour.text.toString())
 
             val fragment = LoadingTimerFragment()
-            val fragmentmaanager = requireActivity().supportFragmentManager
-            val transaction = fragmentmaanager.beginTransaction()
+            fragment.arguments = bundle
+            val fragmentmanager = parentFragmentManager//to get back to parent fragment i.e timerfragment
+            val transaction = fragmentmanager.beginTransaction()
             transaction.replace(R.id.frame2,fragment)
+            transaction.addToBackStack(null)
             transaction.commit()
 
 
