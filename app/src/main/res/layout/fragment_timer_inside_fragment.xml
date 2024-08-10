@@ -15,6 +15,8 @@
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:layout_marginBottom="10dp"
             android:gravity="center"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -101,22 +103,39 @@
                 android:textSize="20sp" />
         </LinearLayout>
 
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="40dp"
+            android:src="@drawable/playbutton"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/numberPad"
+            app:layout_constraintVertical_bias="1.0" />
+
         <GridLayout
             android:id="@+id/numberPad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="40dp"
             android:columnCount="3"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-            app:layout_constraintVertical_bias="0.129">
+            app:layout_constraintVertical_bias="0.178">
 
             <Button
                 android:id="@+id/numpad1"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:background="@android:color/transparent"
                 android:clickable="false"
                 android:text="1"
@@ -125,8 +144,10 @@
 
             <Button
                 android:id="@+id/numpad2"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:layout_row="0"
                 android:layout_column="1"
                 android:background="@android:color/transparent"
@@ -136,8 +157,8 @@
 
             <Button
                 android:id="@+id/numpad3"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:background="@android:color/transparent"
                 android:text="3"
                 android:textColor="@android:color/white"
@@ -145,8 +166,8 @@
 
             <Button
                 android:id="@+id/numpad4"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:background="@android:color/transparent"
                 android:text="4"
                 android:textColor="@android:color/white"
@@ -154,8 +175,10 @@
 
             <Button
                 android:id="@+id/numpad5"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:background="@android:color/transparent"
                 android:text="5"
                 android:textColor="@android:color/white"
@@ -163,8 +186,8 @@
 
             <Button
                 android:id="@+id/numpad6"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:background="@android:color/transparent"
                 android:text="6"
                 android:textColor="@android:color/white"
@@ -172,8 +195,8 @@
 
             <Button
                 android:id="@+id/numpad7"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:background="@android:color/transparent"
                 android:text="7"
                 android:textColor="@android:color/white"
@@ -181,8 +204,10 @@
 
             <Button
                 android:id="@+id/numpad8"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:background="@android:color/transparent"
                 android:text="8"
                 android:textColor="@android:color/white"
@@ -190,22 +215,24 @@
 
             <Button
                 android:id="@+id/numpad9"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:background="@android:color/transparent"
                 android:text="9"
                 android:textColor="@android:color/white"
                 android:textSize="24sp" />
 
             <View
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:background="@android:color/transparent" />
 
             <Button
                 android:id="@+id/numpad0"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:background="@android:color/transparent"
                 android:text="0"
                 android:textColor="@android:color/white"
@@ -213,26 +240,13 @@
 
             <ImageView
                 android:id="@+id/clear"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:layout_gravity="center"
                 android:background="@drawable/ic_clear"
                 android:contentDescription="Clear"
                 android:padding="50dp" />
         </GridLayout>
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="50dp"
-            android:src="@drawable/playbutton"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numberPad"
-            app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

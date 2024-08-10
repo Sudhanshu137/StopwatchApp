@@ -12,16 +12,20 @@
 
         <antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator
             android:id="@+id/circular_progress"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="250dp"
+            android:layout_height="220dp"
             android:layout_gravity="center"
-            app:drawDot="false"
+            app:direction="clockwise"
+            app:drawDot="true"
+            app:enableProgressAnimation="true"
+            app:formattingPattern="@string/pattern"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.284"
+            app:layout_constraintVertical_bias="0.209"
+            app:progressColor="#E43F15"
             app:textSize="0sp" />
 
         <Chronometer
@@ -37,27 +41,28 @@
 
         <ImageView
             android:id="@+id/loadingpause"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="40dp"
             android:src="@drawable/pausebutton"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/circular_progress"
-            app:layout_constraintVertical_bias="0.75" />
+            app:layout_constraintVertical_bias="1.0" />
 
         <ImageView
             android:id="@+id/destroy"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/trash"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/loadingpause"
             app:layout_constraintEnd_toStartOf="@+id/loadingpause"
-            app:layout_constraintHorizontal_bias="0.517"
+            app:layout_constraintHorizontal_bias="0.629"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.868" />
+            app:layout_constraintTop_toTopOf="@+id/loadingpause" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

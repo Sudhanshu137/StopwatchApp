@@ -30,6 +30,7 @@ class TimerFragment : Fragment() {
         val innerFragment = timer_inside_fragment()
         childFragmentManager.beginTransaction()
             .replace(R.id.frame2, innerFragment)
+            .addToBackStack(null)
             .commit()
         return binding.root
     }

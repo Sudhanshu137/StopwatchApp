@@ -66,7 +66,7 @@ class timer_inside_fragment : Fragment() {
             val fragmentmanager = parentFragmentManager//to get back to parent fragment i.e timerfragment
             val transaction = fragmentmanager.beginTransaction()
             transaction.replace(R.id.frame2,fragment)
-            transaction.addToBackStack(null)
+            transaction.addToBackStack("timer_inside_fragment")
             transaction.commit()
 
 
