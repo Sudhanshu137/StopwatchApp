@@ -27,12 +27,9 @@ class MainActivity : AppCompatActivity() {
     private var isRunning = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        //window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
-        //TO MAKE STATUS PAR TRANSPARENT
-        // Make status bar transparent without affecting the navigation bar
-      // enableEdgeToEdge()
-        // Make status bar transparent
-        window.apply {
+
+        // Make status bar transparent  and not overlap navigation buttons
+      window.apply {
             // Clear the previous flags
             clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
             // Apply new flags to make the status bar transparent
@@ -40,7 +37,7 @@ class MainActivity : AppCompatActivity() {
             decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
             // Set status bar color to transparent
             statusBarColor = android.graphics.Color.TRANSPARENT
-        }
+                   }
 
 
         super.onCreate(savedInstanceState)

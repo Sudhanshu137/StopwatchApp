@@ -104,7 +104,7 @@ class LoadingTimerFragment : Fragment() {
                     binding1.circularProgress.setProgress(elapsedTime.toDouble(), countdownTime.toDouble()-1000.0)
 
                     // Post next update with minimal delay
-                    handler.postDelayed(this, 10) // Update approximately 60 times per second
+                    handler.postDelayed(this, 16) // Update approximately 60 times per second
                 } else {
                     binding1.chronometre.text = "00:00:00"
                     // Ensure progress bar is set to maximum

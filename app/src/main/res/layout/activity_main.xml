@@ -29,7 +29,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:abb_indicatorAppearance="round"
-        app:abb_indicatorColor="#4D599E"
+        app:abb_indicatorColor="@color/my_color"
         app:abb_indicatorHeight="4dp"
         app:abb_indicatorMargin="16dp"
         app:abb_selectedIndex="0"

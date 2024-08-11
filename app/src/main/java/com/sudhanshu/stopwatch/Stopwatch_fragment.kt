@@ -23,10 +23,6 @@ class Stopwatch_fragment : Fragment() {
     private var isRunning = false
 
 
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -38,6 +34,8 @@ class Stopwatch_fragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentStopwatchFragmentBinding.inflate(inflater, container, false)
+
+        binding.stopwatchChronometre.text = "00:00:00"// to display this format at start of app
         //write code for object in fragment
 
         binding.stopwatchPlay.setOnClickListener {

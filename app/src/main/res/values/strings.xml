@@ -4,5 +4,6 @@
     <string name="Timer">Timer</string>
     <string name="pattern">%.2f</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="stopwatchtime">00:00:00</string>
 
 </resources>

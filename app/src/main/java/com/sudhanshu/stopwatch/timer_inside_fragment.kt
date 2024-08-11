@@ -11,7 +11,6 @@ import com.sudhanshu.stopwatch.databinding.FragmentTimerBinding
 import com.sudhanshu.stopwatch.databinding.FragmentTimerInsideFragmentBinding
 
 class timer_inside_fragment : Fragment() {
-    // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
     private lateinit var selectedtextview: TextView //check for which one is selected hour,minute or second
